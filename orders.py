@@ -1,6 +1,6 @@
 from binance.exceptions import BinanceAPIException
-from bot.client import client
-from bot.logging_config import logger
+from client import client
+from logging_config import logger
 
 
 def place_market_order(symbol, side, quantity):
@@ -16,7 +16,7 @@ def place_market_order(symbol, side, quantity):
             type="MARKET",
             quantity=quantity
         )
-
+        
         logger.info(f"Response: {response}")
 
         return response
