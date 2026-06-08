@@ -1,0 +1,15 @@
+trading_bot/
+│
+├── bot/
+│   ├── __init__.py
+│   ├── client.py
+│   ├── orders.py
+│   ├── validators.py
+│   └── logging_config.py
+│
+├── logs/
+│
+├── cli.py
+├── requirements.txt
+├── README.md
+└── .env
