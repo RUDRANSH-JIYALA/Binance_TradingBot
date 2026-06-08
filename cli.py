@@ -1,18 +1,19 @@
 import argparse
 
-from bot.orders import (
+from orders import (
     place_market_order,
     place_limit_order
 )
 
-from bot.validators import (
+from validators import (
     validate_side,
     validate_order_type,
     validate_quantity,
     validate_price
 )
 
-from bot.logging_config import logger
+from logging_config import logger
+
 
 
 def main():
@@ -103,7 +104,10 @@ def main():
             f"{response.get('avgPrice')}"
         )
 
-        print("\nSUCCESS: Order placed successfully")
+        if response and response.get("orderId"):
+            print("\nSUCCESS: Order placed successfully")
+        else:
+            print("\nFAILED: No valid order response received")
 
     except Exception as e:
 
